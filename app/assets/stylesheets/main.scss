@@ -1,0 +1,6 @@
+@import "compass";
+
+.row_test {
+  @include display-flex;
+  @include flex-direction(row);
+}

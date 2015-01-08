@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: disclosure_development
+
+test:
+  <<: *default
+  database: disclosure_test
+
+production:
+  <<: *default
+  database: disclosure_production
+#  username: disclosure
+#  password: <%= ENV['DISCLOSURE_DATABASE_PASSWORD'] %>
