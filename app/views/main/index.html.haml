@@ -1,10 +1,37 @@
-%h1
-  Финансовые декларации
-%p
-  чиновников городских советов
+%header
+  %h1
+    Финансовые декларации
 
-.row_test
-  %div
-    ddd
-  %div
-    ccccc
+.cities
+  - 15.times do
+    .city
+      .city_name
+        Донецк
+      .titles
+        .item.golova
+          .title
+            Голова
+          .income
+            230.000 ₴
+        - 2.times do
+          .item
+            .title
+              Заступник
+            .income
+              230.000 ₴
+  - 15.times do
+    .city
+      .city_name
+        Донецк
+      .titles
+        .item.golova
+          .title
+            Голова
+          .income
+            230.000 ₴
+        - 3.times do
+          .item
+            .title
+              Заступник
+            .income
+              230.000 ₴

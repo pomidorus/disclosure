@@ -1,6 +1,57 @@
-@import "compass";
+//@import "compass";
+//
+//.row_test {
+//  @include display-flex;
+//  @include flex-direction(row);
+//}
 
-.row_test {
-  @include display-flex;
-  @include flex-direction(row);
+body {
+  background-color: #555;
 }
+
+header {
+  background-color: #444;
+  text-align: center;
+  color: #eee;
+
+  h1 {
+    margin: 0px 0px;
+    padding: 10px 0px;
+  }
+}
+
+.cities {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.city {
+  padding: 8px 12px;
+  margin: 8px 8px;
+  background-color: #eee;
+  border-radius: 5px;
+
+  .city_name {
+    font-size: 18px;
+    padding: 13px 0px;
+  }
+}
+
+.titles {
+  .title {
+    font-size: 13px;
+    width: 100px;
+  }
+}
+
+.item {
+  display: flex;
+
+  &.golova {
+    .income {
+      font-weight: bold;
+    }
+  }
+}
+
+
