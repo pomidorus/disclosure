@@ -1,37 +1,42 @@
-%header
+%header.flex
   %h1
     Финансовые декларации
+  .action
+    .add_disclosure
+      = link_to 'Добавить декларацию', disclosure_new_path, class: 'btn btn-default'
 
-.cities
-  - 15.times do
-    .city
-      .city_name
-        Донецк
-      .titles
-        .item.golova
-          .title
-            Голова
-          .income
-            230.000 ₴
-        - 2.times do
-          .item
-            .title
-              Заступник
-            .income
-              230.000 ₴
-  - 15.times do
-    .city
-      .city_name
-        Донецк
-      .titles
-        .item.golova
-          .title
-            Голова
-          .income
-            230.000 ₴
-        - 3.times do
-          .item
-            .title
-              Заступник
-            .income
-              230.000 ₴
+.container
+  .row
+    .cities.col-md-12
+      - 15.times do
+        .city
+          .city_name
+            Донецк
+          .titles
+            .item.golova
+              .title
+                Голова
+              .income
+                230.000 ₴
+            - 2.times do
+              .item
+                .title
+                  Заступник
+                .income
+                  230.000 ₴
+      - 15.times do
+        .city
+          .city_name
+            Донецк
+          .titles
+            .item.golova
+              .title
+                Голова
+              .income
+                230.000 ₴
+            - 3.times do
+              .item
+                .title
+                  Заступник
+                .income
+                  230.000 ₴

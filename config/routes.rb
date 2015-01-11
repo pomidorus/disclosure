@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'disclosure/new'
+
   get 'main/index'
 
   root 'main#index'
