@@ -4,3 +4,53 @@
   .action
     .add_disclosure
       fffff
+
+.container
+  .row
+    .col-md-12
+      %form.new_disclosure
+        .form-group
+          %label
+            Город
+          %input.form-control
+        .form-group
+          %label
+            Посада
+          %ul.nav.nav-pills
+            %li.active{role: 'presentation'}
+              %a{href: '#'}
+                Голова
+            %li{role: 'presentation'}
+              %a{href: '#'}
+                Заступник
+        .form-group
+          %label
+            ФИО
+          %input.form-control
+        .form-group
+          %label
+            Общий доход
+          .row
+            .col-md-9
+              %input.form-control
+            .col-md-3
+              %select.form-control
+                %option
+                  2014
+                %option
+                  2013
+                %option
+                  2012
+          .row{style: 'margin-top: 7px'}
+            .col-md-9
+              %input.form-control
+            .col-md-3
+              %select.form-control
+                %option
+                  2014
+                %option
+                  2013
+                %option
+                  2012
+        %button.btn.btn-default{type:"submit"}
+          Submit
