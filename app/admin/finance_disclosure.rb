@@ -12,19 +12,6 @@ ActiveAdmin.register FinanceDisclosure do
     actions
   end
 
-  # show do
-  #   panel "Incomes" do
-  #     table_for finance_disclosure.incomes do
-  #       column :amount
-  #     end
-  #   end
-  #   panel "Details" do
-  #     table_for finance_disclosure do
-  #       column :submitted
-  #     end
-  #   end
-  # end
-
   show do
     attributes_table do
       row :submitted
@@ -37,9 +24,9 @@ ActiveAdmin.register FinanceDisclosure do
   end
 
   form do |f|
-    f.inputs "Add/Edit Disclosure" do
-      f.input :submitted
-      # f.input :incomes, :as => :check_boxes
+    f.inputs "Добавление/Редактирование декларации" do
+      f.input :year, label: 'Декларируемый год'
+      f.input :submitted, label: 'Дата подачи декларации'
     end
     f.inputs "Ведомости про доходы" do
       f.has_many :incomes, heading: 'Доход', allow_destroy: true, new_record: true do |i|
@@ -50,19 +37,4 @@ ActiveAdmin.register FinanceDisclosure do
   end
 
   filter :submitted
-
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # permit_params :list, :of, :attributes, :on, :model
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:permitted, :attributes]
-  #   permitted << :other if resource.something?
-  #   permitted
-  # end
-
-
 end

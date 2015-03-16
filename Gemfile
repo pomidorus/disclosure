@@ -12,10 +12,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'puma'
 
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails' #delete
 gem 'quiet_assets'
 gem 'haml-rails'
-gem 'compass-rails'
+# gem 'compass-rails' #delete
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -23,6 +23,7 @@ gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 
 gem 'money-rails'
+gem 'annotate', '~> 2.6.6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
