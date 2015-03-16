@@ -1,0 +1,23 @@
+.global-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eee;
+  color: #444;
+  padding: 17px 8.3% 17px 8.3%;
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .block {
+    display: flex;
+    div {
+      margin-right: 30px;
+    }
+  }
+
+  .disclosures_count {
+    font-size: 24px;
+    margin-right: 50px;
+  }
+}

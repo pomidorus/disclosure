@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'pages/disclosure_learn'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  get 'disclosure/new'
 
+  get 'disclosure/new'
   get 'main/index'
+
+  get '/public-asset-disclosure/learn-more', to: 'pages#disclosure_learn'
+  get '/control-disclosure-information', to: 'pages#control_disclosure'
 
   root 'main#index'
 
