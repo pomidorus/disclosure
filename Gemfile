@@ -15,7 +15,7 @@ gem 'puma'
 gem 'twitter-bootstrap-rails' #delete
 gem 'quiet_assets'
 gem 'haml-rails'
-# gem 'compass-rails' #delete
+gem 'compass-rails' #delete
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 

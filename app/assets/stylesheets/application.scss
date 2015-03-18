@@ -1,6 +1,17 @@
 @import "active_admin";
 @import "vendor/normalize";
 
+body {
+  min-width: 960px;
+}
+
+h2 {
+  margin: 0 0;
+  color: white;
+}
+
 @import "application/header";
+@import "home/index";
 @import "main";
 @import "disclosure";
+

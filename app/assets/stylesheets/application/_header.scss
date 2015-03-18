@@ -1,12 +1,22 @@
 .global-header {
   display: flex;
   justify-content: space-between;
-  background-color: #eee;
+  align-items: center;
+  background-color: white;
   color: #444;
   padding: 17px 8.3% 17px 8.3%;
+  border-bottom: 2px solid #444;
 
   .logo {
     font-size: 24px;
+    a {
+      color: #444;
+      text-decoration: none;
+
+      &:hover {
+        color: lighten(#444, 20);
+      }
+    }
   }
 
   .block {
@@ -17,7 +27,10 @@
   }
 
   .disclosures_count {
-    font-size: 24px;
+    span {
+      font-size: 24px;
+    }
+    font-size: 16px;
     margin-right: 50px;
   }
 }
