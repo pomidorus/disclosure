@@ -10,7 +10,8 @@
 #
 
 class Position < ActiveRecord::Base
-  has_many :persons
+  has_many :persons, through: :officials
+  has_many :officials
 
   validates_presence_of :short, :full
 end

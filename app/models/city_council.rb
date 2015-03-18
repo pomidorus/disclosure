@@ -1,15 +1,15 @@
 # == Schema Information
 #
-# Table name: people
+# Table name: city_councils
 #
 #  id         :integer          not null, primary key
-#  full_name  :string
+#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Person < ActiveRecord::Base
-  has_many :positions, through: :officials
+class CityCouncil < ActiveRecord::Base
   has_many :officials
 
+  validates_presence_of :name
 end

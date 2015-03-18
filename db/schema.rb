@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318131517) do
+ActiveRecord::Schema.define(version: 20150318151703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,12 +49,21 @@ ActiveRecord::Schema.define(version: 20150318131517) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "finance_disclosures", force: :cascade do |t|
-    t.date     "submitted"
+  create_table "city_councils", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "year"
   end
+
+  create_table "finance_disclosures", force: :cascade do |t|
+    t.date     "submitted"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "year"
+    t.integer  "official_id"
+  end
+
+  add_index "finance_disclosures", ["official_id"], name: "index_finance_disclosures_on_official_id", using: :btree
 
   create_table "incomes", force: :cascade do |t|
     t.integer  "amount_kopiyok",        default: 0,     null: false
@@ -63,6 +72,16 @@ ActiveRecord::Schema.define(version: 20150318131517) do
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
   end
+
+  create_table "officials", force: :cascade do |t|
+    t.integer  "person_id"
+    t.integer  "position_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "city_council_id"
+  end
+
+  add_index "officials", ["city_council_id"], name: "index_officials_on_city_council_id", using: :btree
 
   create_table "people", force: :cascade do |t|
     t.string   "full_name"
