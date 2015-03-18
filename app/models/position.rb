@@ -1,13 +1,16 @@
 # == Schema Information
 #
-# Table name: people
+# Table name: positions
 #
 #  id         :integer          not null, primary key
-#  full_name  :string
+#  short      :string
+#  full       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Person < ActiveRecord::Base
-  has_many :finance_disclosures
+class Position < ActiveRecord::Base
+  has_many :persons
+
+  validates_presence_of :short, :full
 end

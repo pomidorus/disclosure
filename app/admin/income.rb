@@ -1,6 +1,6 @@
 ActiveAdmin.register Income do
   belongs_to :finance_disclosure, optional: true
-  menu priority: 3
+  menu priority: 4
   permit_params :amount_kopiyok, :finance_disclosure_id
 
   index do

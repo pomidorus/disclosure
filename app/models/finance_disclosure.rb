@@ -11,8 +11,9 @@
 
 class FinanceDisclosure < ActiveRecord::Base
   has_one :person
-  has_many :properties
+  has_one :position
 
+  has_many :properties
   has_many :incomes
   accepts_nested_attributes_for :incomes
 
