@@ -1,0 +1,75 @@
+section.promo-menu {
+  border-bottom: 1px solid #444;
+  padding: 10px 0 41px 0;
+  h2 {
+    font-size: 40px;
+    text-align: center;
+    color: #000000;
+  }
+
+  .promo-nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 0 0;
+
+    div {
+      margin-right: 10px;
+      font-size: 20px;
+
+      a {
+        text-decoration: none;
+        border-bottom: 1px solid lightblue;
+      }
+    }
+  }
+}
+
+.block {
+  display: flex;
+}
+
+section.disclosures {
+  padding: 33px 8.3% 0px 8.3%;
+
+  .disclosure {
+    display: flex;
+    align-items: center;
+    padding: 10px 0 10px 0;
+
+    div {
+      margin-right: 17px;
+      flex: 0.3;
+    }
+
+    .general-income {
+      flex: 0.2;
+    }
+
+    .general-income-value {
+      .box {
+        display: inline-block;
+        width: 10px;
+        height: 13px;
+        background-color: darkgrey;
+      }
+    }
+
+    .general-income {
+      font-size: 20px;
+
+      &::before {
+        content: '₴';
+      }
+    }
+
+    .person {
+      flex: 0.5;
+      font-size: 20px;
+    }
+
+    .position {
+//      overflow: hidden;
+//      white-space: nowrap;
+    }
+  }
+}

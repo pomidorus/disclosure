@@ -11,45 +11,48 @@
       .by_city
         = link_to 'Горсовет', root_path, class: 'income'
 
-%header.flex
-  %h1
-    Финансовые декларации
-  .action
-    .add_disclosure
-      = link_to 'Добавить декларацию', disclosure_new_path, class: 'btn btn-default'
+%section.disclosures
+  %article.disclosure
+    .general-income-value
+      .box{data:{value: 190}}
+    .general-income
+      120 000
+    .person
+      %a{href:'#'}
+        Селезньов А.Е.
+    .position
+      %a{href:'#'}
+        Секретар
+    .city-council
+      %a{href:'#'}
+        Донецька миська рада
 
-.container
-  .row
-    .cities.col-md-12
-      - 15.times do
-        .city
-          .city_name
-            Донецк
-          .titles
-            .item.golova
-              .title
-                Голова
-              .income
-                230.000 ₴
-            - 2.times do
-              .item
-                .title
-                  Заступник
-                .income
-                  230.000 ₴
-      - 15.times do
-        .city
-          .city_name
-            Донецк
-          .titles
-            .item.golova
-              .title
-                Голова
-              .income
-                230.000 ₴
-            - 3.times do
-              .item
-                .title
-                  Заступник
-                .income
-                  230.000 ₴
+  %article.disclosure
+    .general-income-value
+      .box{data:{value: 80}}
+    .general-income
+      12 000
+    .person
+      %a{href:'#'}
+        Константинопольский А.Е.
+    .position
+      %a{href:'#'}
+        Секретар
+    .city-council
+      %a{href:'#'}
+        Новокаховська миська рада
+
+  %article.disclosure
+    .general-income-value
+      .box{data:{value: 100}}
+    .general-income
+      2 000
+    .person
+      %a{href:'#'}
+        Кузьменко А.Е.
+    .position
+      %a{href:'#'}
+        Секретар заместителя начальника головного управления
+    .city-council
+      %a{href:'#'}
+        Павлоградська миська рада
