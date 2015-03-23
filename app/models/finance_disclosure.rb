@@ -28,18 +28,18 @@ class FinanceDisclosure < ActiveRecord::Base
   end
 
   def general_income_value
-    general_income.amount_hryvna
+    general_income.amount_hryvna if general_income.present?
   end
 
   def official_name
-    official.person_short_name
+    official.person_short_name if official.present?
   end
 
   def official_position
-    official.position.full
+    official.position.full if official.present?
   end
 
   def city_council
-    official.city_council
+    official.city_council if official.present?
   end
 end
