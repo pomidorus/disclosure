@@ -13,9 +13,15 @@
 class FinanceDisclosure < ActiveRecord::Base
   belongs_to :official
 
-  has_many :properties
+  has_one :general_income, class_name: "Income"
+  accepts_nested_attributes_for :general_income
+
   has_many :incomes
   accepts_nested_attributes_for :incomes
+
+  has_many :properties
+
+  validates_presence_of :official_id
 
   def to_s
     "Декларация  #{submitted}"

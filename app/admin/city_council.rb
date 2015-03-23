@@ -1,5 +1,5 @@
 ActiveAdmin.register CityCouncil do
-  menu priority: 5
+  menu priority: 6
   permit_params :name
 
   index do

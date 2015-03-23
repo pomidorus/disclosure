@@ -1,5 +1,5 @@
 ActiveAdmin.register Person do
-  menu priority: 2
+  menu priority: 4
   permit_params :full_name
 
   index do

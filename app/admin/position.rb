@@ -1,5 +1,5 @@
 ActiveAdmin.register Position do
-  menu priority: 3
+  menu priority: 5
   permit_params :short, :full
 
   index do

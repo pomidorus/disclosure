@@ -12,4 +12,8 @@ class CityCouncil < ActiveRecord::Base
   has_many :officials
 
   validates_presence_of :name
+
+  def short_name
+    "#{name.split(' ')[0]} МР"
+  end
 end

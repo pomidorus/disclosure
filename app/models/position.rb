@@ -14,4 +14,8 @@ class Position < ActiveRecord::Base
   has_many :officials
 
   validates_presence_of :short, :full
+
+  def to_s
+    short
+  end
 end

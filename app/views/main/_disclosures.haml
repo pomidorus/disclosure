@@ -1,0 +1,16 @@
+%section.disclosures
+  - @disclosures.each do |disclosure|
+    %article.disclosure
+      .general-income-value
+        .box{data:{value: 190}}
+      .general-income
+        = disclosure.general_income.amount_hryvna
+      .person
+        %a{href:'#'}
+          Селезньов А.Е.
+      .position
+        %a{href:'#'}
+          Секретар
+      .city-council
+        %a{href:'#'}
+          Донецька миська рада

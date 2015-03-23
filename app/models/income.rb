@@ -8,6 +8,7 @@
 #  finance_disclosure_id :integer
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
+#  amount_hryvna         :integer          default(0)
 #
 
 class Income < ActiveRecord::Base
@@ -15,6 +16,6 @@ class Income < ActiveRecord::Base
   belongs_to :finance_disclosure
 
   def to_s
-    "Доход #{amount}"
+    "#{amount_hryvna} ₴"
   end
 end

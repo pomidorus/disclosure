@@ -1,19 +1,21 @@
 ActiveAdmin.register Official do
-  menu priority: 6
-  permit_params :person_id, :position_id
+  menu priority: 3
+  permit_params :person_id, :position_id, :city_council_id
 
   index do
-    column :person_name do |official|
+    column :person do |official|
       link_to official.person_name, [:admin, official ]
     end
-    column :position_id
+    column :position
+    column :city_council
     actions
   end
 
   show do
     attributes_table do
-      row :person_id
-      row :position_id
+      row :person
+      row :position
+      row :city_council
     end
   end
 
