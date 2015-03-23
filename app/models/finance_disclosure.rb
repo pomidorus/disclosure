@@ -22,6 +22,7 @@ class FinanceDisclosure < ActiveRecord::Base
   has_many :properties
 
   validates_presence_of :official_id
+  validates_presence_of :general_income
 
   def to_s
     "Декларация  #{submitted}"
