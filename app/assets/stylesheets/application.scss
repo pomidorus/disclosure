@@ -10,8 +10,13 @@ h2 {
   color: white;
 }
 
+a {
+  color: #28154D;
+}
+
 @import "application/header";
 @import "main/index";
 @import "main";
 @import "disclosure";
+
 
