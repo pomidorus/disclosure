@@ -15,4 +15,8 @@ class Person < ActiveRecord::Base
   def short_name
     full_name.split(' ')[0]
   end
+
+  def name_initials
+    "#{full_name.split(' ')[1][0]}.#{full_name.split(' ')[2][0]}."
+  end
 end

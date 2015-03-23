@@ -26,4 +26,20 @@ class FinanceDisclosure < ActiveRecord::Base
   def to_s
     "Декларация  #{submitted}"
   end
+
+  def general_income_value
+    general_income.amount_hryvna
+  end
+
+  def official_name
+    official.person_short_name
+  end
+
+  def official_position
+    official.position.full
+  end
+
+  def city_council
+    official.city_council
+  end
 end

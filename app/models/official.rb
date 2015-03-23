@@ -21,6 +21,10 @@ class Official < ActiveRecord::Base
     person.full_name
   end
 
+  def person_short_name
+    "#{person.short_name} #{person.name_initials}"
+  end
+
   def to_s
     "#{person.short_name} #{position.short} #{city_council.short_name}"
   end

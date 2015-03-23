@@ -16,4 +16,8 @@ class CityCouncil < ActiveRecord::Base
   def short_name
     "#{name.split(' ')[0]} МР"
   end
+
+  def to_s
+    name
+  end
 end

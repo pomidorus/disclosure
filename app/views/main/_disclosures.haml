@@ -2,15 +2,15 @@
   - @disclosures.each do |disclosure|
     %article.disclosure
       .general-income-value
-        .box{data:{value: 190}}
+        .box{data:{value: (200*disclosure.general_income_value)/@max_general_income}}
       .general-income
-        = disclosure.general_income.amount_hryvna
+        = disclosure.general_income_value
       .person
         %a{href:'#'}
-          Селезньов А.Е.
+          = disclosure.official_name
       .position
         %a{href:'#'}
-          Секретар
+          = disclosure.official_position
       .city-council
         %a{href:'#'}
-          Донецька миська рада
+          = disclosure.city_council
