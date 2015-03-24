@@ -2,11 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
   color: #444;
   padding: 17px 8.3% 17px 8.3%;
   border-bottom: 2px solid #444;
+
+  background: linear-gradient(to bottom, rgba(255,0,0,0), rgba(205,205,205,1));
+  background-color: white;
   box-shadow: 0px 4px 5px rgba(#555, 0.4);
+
+  position:relative;
+  z-index: 2;
 
   a {
     color: rgba(57, 53, 166, 0.97);
@@ -30,6 +35,10 @@
     display: flex;
     div {
       margin-right: 30px;
+    }
+
+    a {
+      font-size: 14px;
     }
   }
 
