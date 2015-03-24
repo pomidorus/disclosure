@@ -13,8 +13,11 @@
 class FinanceDisclosure < ActiveRecord::Base
   belongs_to :official
 
-  has_one :general_income, class_name: "Income"
+  has_one :general_income
   accepts_nested_attributes_for :general_income
+
+  has_one :family_general_income
+  accepts_nested_attributes_for :family_general_income
 
   has_many :incomes
   accepts_nested_attributes_for :incomes
@@ -23,6 +26,8 @@ class FinanceDisclosure < ActiveRecord::Base
 
   validates_presence_of :official_id
   validates_presence_of :general_income
+
+  default_scope { includes(:general_income).order('general_incomes.amount_hryvna DESC') }
 
   def to_s
     "Декларация  #{submitted}"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323143922) do
+ActiveRecord::Schema.define(version: 20150324165004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,15 @@ ActiveRecord::Schema.define(version: 20150323143922) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "family_general_incomes", force: :cascade do |t|
+    t.integer  "amount_hryvna"
+    t.integer  "finance_disclosure_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "family_general_incomes", ["finance_disclosure_id"], name: "index_family_general_incomes_on_finance_disclosure_id", using: :btree
+
   create_table "finance_disclosures", force: :cascade do |t|
     t.date     "submitted"
     t.datetime "created_at",  null: false
@@ -64,6 +73,15 @@ ActiveRecord::Schema.define(version: 20150323143922) do
   end
 
   add_index "finance_disclosures", ["official_id"], name: "index_finance_disclosures_on_official_id", using: :btree
+
+  create_table "general_incomes", force: :cascade do |t|
+    t.integer  "amount_hryvna"
+    t.integer  "finance_disclosure_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "general_incomes", ["finance_disclosure_id"], name: "index_general_incomes_on_finance_disclosure_id", using: :btree
 
   create_table "incomes", force: :cascade do |t|
     t.integer  "amount_kopiyok",        default: 0,     null: false
