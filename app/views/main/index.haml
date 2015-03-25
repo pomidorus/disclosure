@@ -11,4 +11,14 @@
       .by_city
         = link_to 'Горсовет', root_path, class: 'income'
 
+%section.disclosures-menu
+  %header
+    %h2.disclosures-header
+      Общая сумма совокупного дохода
+  %nav.income-menu
+    %ul
+      %li.active
+        Декларант
+      %li
+        Члены семьи
 = render 'main/disclosures'
