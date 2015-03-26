@@ -1,13 +1,9 @@
-alert_f = () ->
-  alert 'fuck you'
-
 ready = ->
   general_income_values = $('.general-income-value .box')
   for general_income_value in general_income_values
     do ->
       box_width = $(general_income_value).data('value')
       $(general_income_value).width(box_width)
-
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
