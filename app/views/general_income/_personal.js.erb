@@ -1,0 +1,3 @@
+$("#personal_income_button").parent('li').addClass('active');
+$("#family_income_button").parent('li').removeClass('active');
+$("#disclosures").html("<%= escape_javascript(render partial: 'finance_disclosures/personal_finance_disclosure', locals: { disclosures: @disclosures}) %>");

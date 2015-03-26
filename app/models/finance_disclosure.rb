@@ -27,7 +27,8 @@ class FinanceDisclosure < ActiveRecord::Base
   validates_presence_of :official_id
   validates_presence_of :general_income
 
-  default_scope { includes(:general_income).order('general_incomes.amount_hryvna DESC') }
+  scope :personal_all, -> { includes(:general_income).order('general_incomes.amount_hryvna DESC') }
+  scope :family_all, -> { includes(:family_general_income).order('family_general_incomes.amount_hryvna DESC') }
 
   def to_s
     "Декларация  #{submitted}"
@@ -35,6 +36,10 @@ class FinanceDisclosure < ActiveRecord::Base
 
   def general_income_value
     general_income.amount_hryvna if general_income.present?
+  end
+
+  def family_general_income_value
+    family_general_income.amount_hryvna if family_general_income.present?
   end
 
   def official_name

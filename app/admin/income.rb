@@ -5,21 +5,21 @@ ActiveAdmin.register Income do
 
   index do
     id_column
-    column :finance_disclosure
+    column :finance_disclosures
     column :amount_hryvna, label: 'Сума доходу, грн'
     actions
   end
 
   show do
     attributes_table do
-      row :finance_disclosure
+      row :finance_disclosures
       row :amount_hryvna
     end
   end
 
   form do |f|
     f.inputs "Общий доход" do
-      f.input :finance_disclosure
+      f.input :finance_disclosures
       f.input :amount_hryvna
     end
     f.actions

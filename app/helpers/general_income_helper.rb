@@ -1,0 +1,2 @@
+module GeneralIncomeHelper
+end
