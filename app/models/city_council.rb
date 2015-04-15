@@ -20,4 +20,8 @@ class CityCouncil < ActiveRecord::Base
   def to_s
     name
   end
+
+  def officials_disclosures
+    officials.joins(:finance_disclosures)
+  end
 end

@@ -17,4 +17,29 @@
 //   .status_tag { background: #6090DB; }
 #header {
   background: #444;
+  padding: 10px 0px 10px 0px;
+
+  ul.tabs {
+    > li.current {
+      > a {
+        font-weight: bold;
+        color: #444;
+        text-shadow: none;
+        background: #eeeeee;
+        border-radius: 0px;
+        padding: 19px 14px 17px 14px;
+      }
+    }
+  }
 }
+
+#title_bar {
+  background: white;
+  border: none;
+  box-shadow: none;
+
+  #titlebar_left {
+    height: 84px;
+  }
+}
+
