@@ -19,4 +19,8 @@ class Person < ActiveRecord::Base
   def name_initials
     "#{full_name.split(' ')[1][0]}.#{full_name.split(' ')[2][0]}."
   end
+
+  def city_council
+    officials.first.city_council
+  end
 end

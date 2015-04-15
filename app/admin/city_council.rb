@@ -1,6 +1,6 @@
 ActiveAdmin.register CityCouncil do
   config.sort_order = 'name_asc'
-  menu priority: 0
+  menu priority: 1
   permit_params :name
 
   index do
@@ -8,7 +8,7 @@ ActiveAdmin.register CityCouncil do
       link_to city_council.name, [:admin, city_council ]
     end
     column "Количество чиновников" do |city_council|
-      city_council.officials.size
+      link_to city_council.officials.size, admin_city_council_officials_path(city_council)
     end
     column "Количество деклараций" do |city_council|
       city_council.officials_disclosures.size
@@ -22,18 +22,17 @@ ActiveAdmin.register CityCouncil do
     end
   end
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # permit_params :list, :of, :attributes, :on, :model
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:permitted, :attributes]
-  #   permitted << :other if resource.something?
-  #   permitted
-  # end
+  ActiveAdmin.register Official do
+    belongs_to :city_council
+    config.filters = false
 
-
+    index do
+      column :person do |official|
+        link_to official.person_name, admin_city_council_official_path(:city_council, official)
+      end
+      column :position
+      column :city_council
+      actions
+    end
+  end
 end
