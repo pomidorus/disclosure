@@ -1,5 +1,5 @@
 ActiveAdmin.register FinanceDisclosure do
-  menu priority: 2
+  menu priority: 3
 
   permit_params :submitted, :official_id, :year,
                 incomes_attributes: [:amount_kopiyok], general_income_attributes: [:amount_hryvna],

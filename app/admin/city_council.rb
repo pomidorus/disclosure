@@ -1,6 +1,8 @@
 ActiveAdmin.register CityCouncil do
   config.sort_order = 'name_asc'
-  menu priority: 1
+  filter :name
+
+  menu priority: 2
   permit_params :name
 
   index do
@@ -24,11 +26,13 @@ ActiveAdmin.register CityCouncil do
 
   ActiveAdmin.register Official do
     belongs_to :city_council
+    includes :person
     config.filters = false
+    # config.sort_order = 'full_name_asc'
 
     index do
       column :person do |official|
-        link_to official.person_name, admin_city_council_official_path(:city_council, official)
+        link_to official.person_name, admin_city_council_official_path(official.city_council.id, official)
       end
       column :position
       column :city_council

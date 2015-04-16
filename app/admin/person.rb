@@ -1,9 +1,8 @@
 ActiveAdmin.register Person do
-  # filter :"city_council", as: :select, collection: CityCouncil.all.map(&:name)
+  config.sort_order = 'full_name_asc'
   filter :full_name
   menu priority: 0
   permit_params :full_name
-  config.sort_order = 'full_name_asc'
 
   index do
     column :full_name do |person|
@@ -18,19 +17,4 @@ ActiveAdmin.register Person do
       row :full_name
     end
   end
-
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # permit_params :list, :of, :attributes, :on, :model
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:permitted, :attributes]
-  #   permitted << :other if resource.something?
-  #   permitted
-  # end
-
-
 end
