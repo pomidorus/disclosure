@@ -1,0 +1,6 @@
+%section.add-disclosure-form
+  = form_for @disclosure_form, url: root_path do |f|
+    .city_council
+      = f.label_tag :city_council, "Міська рада"
+      = f.text_field_tag :city_council_name, nil, placeholder: nil, data: {autocomplete_source: CityCouncil.order(:name).map(&:short_name)}
+    = f.submit_tag 'Add disclosure'
