@@ -1,7 +1,12 @@
 section.add-disclosure-form {
   padding: 28px 8.3% 0px 8.3%;
 
-  form .city_council, form .person, form .position, form .year, form .general-income {
+  form .city_council,
+  form .person,
+  form .position,
+  form .year,
+  form .general-income,
+  form .family-general-income{
     display: flex;
     flex-direction: column;
     padding: 5px 0px 16px 0px;

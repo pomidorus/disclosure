@@ -9,7 +9,7 @@ class DeclaringsController < ApplicationController
     @declaring = Declaring.new(declaring_params)
     @declaring.declared
 
-    respond_with @declaring
+    redirect_to add_disclosure_path
   end
 
   private
