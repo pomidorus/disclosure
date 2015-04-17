@@ -1,10 +1,13 @@
 class Declaring
   include ActiveModel::Model
 
-  attr_accessor :city_council_name, :person_name, :position_name, :year, :general_income_value,
-                :city_council, :person, :position, :official, :general_income
+  attr_accessor :city_council_name, :person_name, :position_name, :year, :general_income_value, :family_general_income_value,
+                :city_council, :person, :position, :official, :general_income, :family_general_income
 
   validates :city_council_name, presence: true
+  validates :person_name, presence: true
+  validates :position_name, presence: true
+  validates :year, presence: true
 
   def declared
     if valid?
@@ -13,8 +16,11 @@ class Declaring
       create_position @position_name
 
       create_official @city_council, @person, @position
+
       create_general_income @general_income_value
-      create_finance_disclosure official, @year, @general_income
+      create_family_general_income @family_general_income_value
+
+      create_finance_disclosure official, @year, general_income, family_general_income
     end
   end
 
@@ -40,7 +46,11 @@ class Declaring
     @general_income = GeneralIncome.create!(amount_hryvna: value)
   end
 
-  def create_finance_disclosure official, year, general_income
-    FinanceDisclosure.create!(official: official, year: year, general_income: general_income)
+  def create_family_general_income value
+    @family_general_income = FamilyGeneralIncome.create!(amount_hryvna: value)
+  end
+
+  def create_finance_disclosure official, year, general_income, family_general_income
+    FinanceDisclosure.create!(official: official, year: year, general_income: general_income, family_general_income: family_general_income)
   end
 end

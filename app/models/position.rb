@@ -16,6 +16,6 @@ class Position < ActiveRecord::Base
   validates_presence_of :full
 
   def to_s
-    short
+    full
   end
 end

@@ -15,6 +15,7 @@ class DeclaringsController < ApplicationController
   private
 
   def declaring_params
-    params.require(:declaring).permit(:city_council_name, :person_name, :position_name, :year, :general_income_value)
+    params.require(:declaring).permit(:city_council_name, :person_name, :position_name, :year,
+                                      :general_income_value, :family_general_income_value )
   end
 end

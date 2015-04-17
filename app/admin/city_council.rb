@@ -28,7 +28,6 @@ ActiveAdmin.register CityCouncil do
     belongs_to :city_council
     includes :person
     config.filters = false
-    # config.sort_order = 'full_name_asc'
 
     index do
       column :person do |official|
@@ -37,6 +36,14 @@ ActiveAdmin.register CityCouncil do
       column :position
       column :city_council
       actions
+    end
+
+    show do
+      attributes_table do
+        row :person
+        row :position
+        row :city_council
+      end
     end
   end
 end
