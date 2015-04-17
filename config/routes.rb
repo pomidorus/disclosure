@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  # get 'declaring/new'
+  # get 'declaring/create'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  # get 'disclosure/new'
-  # get 'main/index'
+  resource :declaring, only: [:new, :create]
+
+  get '/add-disclosure', to: 'declarings#new'
 
   get '/general-income/family', to: 'general_income#family'
   get '/general-income/personal', to: 'general_income#personal'

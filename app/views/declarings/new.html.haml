@@ -1,0 +1,22 @@
+%section.add-disclosure-form
+  = form_for @declaring, url: declaring_path do |f|
+    .city_council
+      = f.label :city_council_name, "Міська рада"
+      = f.text_field :city_council_name, placeholder: nil, data: {autocomplete_source: CityCouncil.order(:name).map(&:short_name)}
+    .year
+      = f.label :year, "Рік"
+      = f.text_field :year, type: 'number', data: {autocomplete_source: ''}
+    .person
+      = f.label :person_name, "Декларант"
+      = f.text_field :person_name, placeholder: nil, data: {autocomplete_source: Person.order(:full_name).map(&:full_name)}
+    .position
+      = f.label :position_name, "Посада"
+      = f.text_field :position_name, placeholder: nil, data: {autocomplete_source: Position.order(:full).map(&:full)}
+    .general-income
+      = f.label :general_income_value, "Общий доход декларанта"
+      = f.text_field :general_income_value, value: 0, type: 'number'
+    .family-general-income
+      = f.label :family_general_income_value, "Общий доход семьи декларанта"
+      = f.text_field :family_general_income_value, value: 0, type: 'number'
+
+    = f.submit 'Add disclosure'

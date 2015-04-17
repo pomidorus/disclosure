@@ -14,7 +14,7 @@ class CityCouncil < ActiveRecord::Base
   validates_presence_of :name
 
   def short_name
-    "#{name.split(' ')[0]} МР"
+    name.split(' ')[0]
   end
 
   def to_s
