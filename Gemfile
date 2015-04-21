@@ -25,6 +25,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'money-rails'
 gem 'annotate', '~> 2.6.6'
 gem 'rails_12factor'
+gem 'babosa'
 
 group :development, :test do
   gem 'byebug'

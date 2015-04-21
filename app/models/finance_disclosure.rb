@@ -27,6 +27,7 @@ class FinanceDisclosure < ActiveRecord::Base
   validates_presence_of :official_id
   validates_presence_of :general_income
 
+  scope :personal_all_with_council, -> { includes(:general_income).order('general_incomes.amount_hryvna DESC') }
   scope :personal_all, -> { includes(:general_income).order('general_incomes.amount_hryvna DESC') }
   scope :family_all, -> { includes(:family_general_income).order('family_general_incomes.amount_hryvna DESC') }
 
