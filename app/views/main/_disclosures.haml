@@ -1,6 +1,7 @@
 %section.disclosures#disclosures
   - @disclosures.each do |disclosure|
     - value = (200*disclosure.general_income_value)/@max_general_income
+
     %article.disclosure
       .general-income-value
         .box{data:{value: value}}

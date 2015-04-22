@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'city_council/show'
-
+  # get 'city_council/show'
   # get 'declaring/new'
   # get 'declaring/create'
 
@@ -10,6 +9,7 @@ Rails.application.routes.draw do
   resource :declaring, only: [:new, :create]
 
   resources :city_council, path: '', only: [:show]
+  resources :position, path: 'posada', only: [:show]
 
   get '/add-disclosure', to: 'declarings#new'
 
