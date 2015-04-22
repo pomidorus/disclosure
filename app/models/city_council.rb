@@ -11,14 +11,24 @@
 class CityCouncil < ActiveRecord::Base
   has_many :officials
 
+  validates :slug, uniqueness: true, presence: true
   validates_presence_of :name
+  before_validation :generate_slug
+
+  def to_s
+    short_name
+  end
+
+  def to_param
+    slug
+  end
 
   def short_name
     name.split(' ')[0]
   end
 
-  def to_s
-    name
+  def generate_slug
+    self.slug ||= name.to_slug.transliterate(:ukrainian).to_s.downcase.parameterize
   end
 
   def officials_disclosures

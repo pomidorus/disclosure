@@ -26,6 +26,7 @@ class FinanceDisclosure < ActiveRecord::Base
 
   validates_presence_of :official_id
   validates_presence_of :general_income
+  validates_presence_of :family_general_income
 
   scope :personal_all, -> { includes(:general_income).order('general_incomes.amount_hryvna DESC') }
   scope :family_all, -> { includes(:family_general_income).order('family_general_incomes.amount_hryvna DESC') }
@@ -47,7 +48,7 @@ class FinanceDisclosure < ActiveRecord::Base
   end
 
   def official_position
-    official.position.full if official.present?
+    official.position if official.present?
   end
 
   def city_council

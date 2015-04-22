@@ -1,0 +1,16 @@
+- disclosures.each do |disclosure|
+  - box_width = (200*disclosure.general_income_value)/@max_general_income
+
+  %article.disclosure
+    .general-income-value
+      .box{style: "width: #{box_width}px"}
+    .general-income
+      = disclosure.general_income_value
+    .person
+      %a{href:'#'}
+        = disclosure.official_name
+    .position
+      %a{href:'#'}
+        = disclosure.official_position
+    .city-council
+      = link_to disclosure.city_council, city_council_path(disclosure.city_council)

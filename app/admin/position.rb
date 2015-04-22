@@ -1,4 +1,12 @@
 ActiveAdmin.register Position do
+  before_filter do
+    Position.class_eval do
+      def to_param
+        id.to_s
+      end
+    end
+  end
+
   config.sort_order = 'short_asc'
   filter :short
   menu priority: 1

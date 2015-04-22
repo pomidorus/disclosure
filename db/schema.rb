@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324165004) do
+ActiveRecord::Schema.define(version: 20150422113253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,7 +53,10 @@ ActiveRecord::Schema.define(version: 20150324165004) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "slug"
   end
+
+  add_index "city_councils", ["slug"], name: "index_city_councils_on_slug", using: :btree
 
   create_table "family_general_incomes", force: :cascade do |t|
     t.integer  "amount_hryvna"
@@ -113,7 +116,10 @@ ActiveRecord::Schema.define(version: 20150324165004) do
     t.string   "full"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "slug"
   end
+
+  add_index "positions", ["slug"], name: "index_positions_on_slug", using: :btree
 
   create_table "properties", force: :cascade do |t|
     t.decimal  "area"
