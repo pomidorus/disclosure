@@ -48,7 +48,7 @@ class FinanceDisclosure < ActiveRecord::Base
   end
 
   def official_position
-    official.position.full if official.present?
+    official.position if official.present?
   end
 
   def city_council

@@ -1,0 +1,17 @@
+%section.promo-menu
+  %header
+    %h2
+      = @position.full
+
+%section.disclosures-menu
+  %header
+    %h2.disclosures-header
+      Общая сумма совокупного дохода
+  %nav.income-menu
+    %ul
+      %li.active
+        = link_to 'Декларант', general_income_personal_path, remote: true, id: 'personal_income_button'
+      %li
+        = link_to 'Члены семьи', general_income_family_path, remote: true, id: 'family_income_button'
+
+= render 'position/disclosures'

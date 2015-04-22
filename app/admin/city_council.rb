@@ -1,4 +1,12 @@
 ActiveAdmin.register CityCouncil do
+  before_filter do
+    CityCouncil.class_eval do
+      def to_param
+        id.to_s
+      end
+    end
+  end
+
   config.sort_order = 'name_asc'
   filter :name
 
