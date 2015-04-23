@@ -14,12 +14,12 @@
 %section.disclosures-menu
   %header
     %h2.disclosures-header
-      Общая сумма совокупного дохода
+      Общая сумма дохода
   %nav.income-menu
     %ul
       %li.active
-        = link_to 'Декларант', general_income_personal_path, remote: true, id: 'personal_income_button'
+        = link_to 'Декларант', personal_general_income_path, remote: true, id: 'personal_income_button'
       %li
-        = link_to 'Члены семьи', general_income_family_path, remote: true, id: 'family_income_button'
+        = link_to 'Члены семьи', family_general_income_path, remote: true, id: 'family_income_button'
 
 = render 'main/disclosures'
