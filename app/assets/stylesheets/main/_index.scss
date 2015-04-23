@@ -117,11 +117,19 @@ section.disclosures {
     }
 
     .general-income-value {
+      display: flex;
+      flex-direction: column;
       .box {
         display: inline-block;
         width: 10px;
         height: 13px;
         background-color: darkgrey;
+      }
+      .box-second {
+        display: inline-block;
+        width: 10px;
+        height: 13px;
+        background-color: #dddddd;
       }
     }
 
