@@ -27,6 +27,8 @@ gem 'annotate', '~> 2.6.6'
 gem 'rails_12factor'
 gem 'babosa'
 
+gem 'd3-rails'
+
 group :development, :test do
   gem 'bullet'
   gem 'byebug'

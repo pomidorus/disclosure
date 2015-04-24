@@ -1,7 +1,11 @@
 %article.disclosure
   .general-income-value
-    .box{data:{value: box_width(disclosure, income_value)}}
-    .box-second{data:{value: box_width(disclosure, second_income_value)}}
+    - if income_value.eql?(:general_income_value)
+      .box{data:{value: box_width(disclosure, income_value)}}
+    - else
+      .box.family{data:{value: box_width(disclosure, income_value)}}
+    - if income_value.eql?(:general_income_value)
+      .box-second{data:{value: box_width(disclosure, second_income_value)}}
   .general-income
     = income(disclosure, income_value)
   .person

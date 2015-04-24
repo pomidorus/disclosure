@@ -1,2 +1,6 @@
 - disclosures.each do |disclosure|
-  = render partial: 'disclosure', locals: {disclosure: disclosure, income_value: income_value, second_income_value: second_income_value}
+  - if income_value.eql?(:family_general_income_value)
+    - unless disclosure.family_general_income_value.eql?(0)
+      = render partial: 'disclosure', locals: {disclosure: disclosure, income_value: income_value, second_income_value: second_income_value}
+  - if income_value.eql?(:general_income_value)
+    = render partial: 'disclosure', locals: {disclosure: disclosure, income_value: income_value, second_income_value: second_income_value}

@@ -10,5 +10,4 @@
         %a{href:'#'}
           = disclosure.official_name
       .position
-        %a{href:'#'}
-          = disclosure.official_position
+        = link_to posada(disclosure), position_path(posada(disclosure))

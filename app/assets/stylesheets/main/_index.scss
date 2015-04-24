@@ -120,12 +120,18 @@ section.disclosures {
     .general-income-value {
       display: flex;
       flex-direction: column;
+
       .box {
         display: inline-block;
         width: 10px;
         height: 13px;
         background-color: #555;
       }
+
+      .box.family {
+        background-color: #dddddd
+      }
+
       .box-second {
         display: inline-block;
         width: 10px;

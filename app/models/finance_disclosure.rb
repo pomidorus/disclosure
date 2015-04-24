@@ -28,8 +28,8 @@ class FinanceDisclosure < ActiveRecord::Base
   validates_presence_of :general_income
   validates_presence_of :family_general_income
 
-  scope :oder_by_family_general_income, -> { includes(:general_income, :family_general_income).order('family_general_incomes.amount_hryvna DESC') }
   scope :oder_by_personal_general_income, -> { includes(:general_income, :family_general_income).order('general_incomes.amount_hryvna DESC') }
+  scope :oder_by_family_general_income, -> { includes(:general_income, :family_general_income).order('family_general_incomes.amount_hryvna DESC') }
 
   def to_s
     "Декларация  #{submitted}"
