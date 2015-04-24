@@ -22,4 +22,5 @@
       %li
         = link_to 'Члены семьи', family_general_income_path, remote: true, id: 'family_income_button'
 
-= render 'main/disclosures'
+%section.disclosures#disclosures
+  = render partial: 'main/disclosures', locals: { disclosures: @disclosures, income_value: :general_income_value, second_income_value: :family_general_income_value}

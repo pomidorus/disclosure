@@ -1,3 +1,2 @@
-%section.disclosures#disclosures
-  - @disclosures.each do |disclosure|
-    = render partial: 'disclosure', locals: {disclosure: disclosure}
+- disclosures.each do |disclosure|
+  = render partial: 'disclosure', locals: {disclosure: disclosure, income_value: income_value, second_income_value: second_income_value}

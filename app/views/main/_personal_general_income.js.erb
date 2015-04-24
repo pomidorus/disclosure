@@ -1,4 +1,4 @@
 $("#family_income_button").parent('li').removeClass('active');
 $("#personal_income_button").parent('li').addClass('active');
-$("#disclosures").html("<%= escape_javascript(render partial: 'main/disclosures_remote',
+$("#disclosures").html("<%= escape_javascript(render partial: 'main/disclosures',
 locals: { disclosures: @disclosures, income_value: :general_income_value, second_income_value: :family_general_income_value}) %>");

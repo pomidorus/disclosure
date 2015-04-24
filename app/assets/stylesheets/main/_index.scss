@@ -40,6 +40,7 @@ section.disclosures-menu {
   padding: 16px 8.3% 35px 8.3%;
 
   background-color: #333;
+  background: linear-gradient(to bottom, #333, #777);
   color: #eee;
 
   .disclosures-header {
@@ -123,7 +124,7 @@ section.disclosures {
         display: inline-block;
         width: 10px;
         height: 13px;
-        background-color: darkgrey;
+        background-color: #555;
       }
       .box-second {
         display: inline-block;
@@ -135,6 +136,7 @@ section.disclosures {
 
     .general-income {
       font-size: 20px;
+      color: #555;
 
       &::before {
         content: '₴';
@@ -143,10 +145,17 @@ section.disclosures {
 
     .person {
       flex: 0.3;
-      font-size: 20px;
+      font-size: 18px;
 
       a {
         color: #777141;
+        line-height: 30px;
+        .surname {
+          border-bottom: 1px solid rgba(#777141, 0.5);
+        }
+        .imya_otchestvo {
+          padding-top: 11px;
+        }
       }
     }
 

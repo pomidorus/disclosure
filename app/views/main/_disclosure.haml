@@ -1,12 +1,14 @@
 %article.disclosure
   .general-income-value
-    .box{data:{value: box_width(disclosure, :general_income_value)}}
-    .box-second{data:{value: box_width(disclosure, :family_general_income_value)}}
+    .box{data:{value: box_width(disclosure, income_value)}}
+    .box-second{data:{value: box_width(disclosure, second_income_value)}}
   .general-income
-    = income(disclosure, :general_income_value)
+    = income(disclosure, income_value)
   .person
     %a{href:'#'}
-      = deklarant_name(disclosure)
+      = deklarant_surname(disclosure)
+      %br
+      = deklarant_imya_otchestvo(disclosure)
   .position
     = link_to posada(disclosure), position_path(posada(disclosure))
   .city-council

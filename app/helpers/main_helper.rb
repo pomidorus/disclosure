@@ -1,4 +1,5 @@
 module MainHelper
+  include PersonHelper
   BOX_WIDTH_100 = 200
 
   def box_width(disclosure, income)
@@ -6,11 +7,15 @@ module MainHelper
   end
 
   def income(disclosure, income)
-    disclosure.send(income)
+    number_with_delimiter(disclosure.send(income), delimiter: ' ')
   end
 
-  def deklarant_name(disclosure)
-    disclosure.official_name
+  def deklarant_surname(disclosure)
+    surname(disclosure.official_name)
+  end
+
+  def deklarant_imya_otchestvo(disclosure)
+    imya_otchestvo(disclosure.official_name)
   end
 
   def posada(disclosure)

@@ -1,6 +1,6 @@
 class MainController < ApplicationController
   def index
-    @disclosures = FinanceDisclosure.includes(official: [:person, :position, :city_council]).personal_all
+    @disclosures = disclosures.oder_by_personal_general_income
 
     @max_income = (@disclosures.map {|disclosure| disclosure.general_income_value}).max
     @max_income = 1 if @max_income == 0

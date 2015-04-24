@@ -21,10 +21,6 @@ class Official < ActiveRecord::Base
     person.full_name
   end
 
-  def person_short_name
-    person.short_name
-  end
-
   def to_s
     person.short_name
   end
